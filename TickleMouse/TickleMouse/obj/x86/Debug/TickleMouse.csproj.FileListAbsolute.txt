@@ -1,9 +1,0 @@
-c:\users\bjh\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\bin\Debug\TickleMouse.exe
-c:\users\bjh\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\bin\Debug\TickleMouse.pdb
-c:\users\bjh\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\obj\x86\Debug\TickleMouse.Properties.Resources.resources
-c:\users\bjh\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\obj\x86\Debug\TickleMouse.csproj.GenerateResource.Cache
-c:\users\bjh\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\obj\x86\Debug\TickleMouse.exe
-c:\users\bjh\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\obj\x86\Debug\TickleMouse.pdb
-C:\Users\BJH\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\obj\x86\Debug\TickleMouse.frm_TickleMouse.resources
-C:\Users\BJH\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\bin\Debug\TickleMouse.exe.config
-C:\Users\BJH\documents\visual studio 2010\Projects\TickleMouse\TickleMouse\obj\x86\Debug\TickleMouse.AboutBox1.resources

@@ -1,0 +1,5 @@
+/home/brian/github/ticklemouse/ticklemouse/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/brian/github/ticklemouse/ticklemouse/bin/Debug/ticklemouse.pdb
+/home/brian/github/ticklemouse/ticklemouse/bin/Debug/ticklemouse.exe
+/home/brian/github/ticklemouse/ticklemouse/obj/x86/Debug/ticklemouse.exe
+/home/brian/github/ticklemouse/ticklemouse/obj/x86/Debug/ticklemouse.pdb

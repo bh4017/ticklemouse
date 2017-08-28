@@ -2,11 +2,33 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
+  <object class="GtkAdjustment" id="adj_spn_frequency_of_tickle">
+    <property name="lower">1</property>
+    <property name="upper">9999</property>
+    <property name="value">1</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adj_spn_length_of_tickle">
+    <property name="lower">1</property>
+    <property name="upper">99999</property>
+    <property name="value">1</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adj_spn_size_of_tickle">
+    <property name="upper">100</property>
+    <property name="value">1</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkApplicationWindow" id="wnd_tickle_mouse">
+    <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">ticklemouse - stop your PC from going to sleep!</property>
     <property name="window_position">center</property>
     <property name="icon">mouse.png</property>
+    <signal name="delete-event" handler="on_wnd_tickle_mouse_delete_event" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
@@ -69,6 +91,21 @@
                 <property name="position">1</property>
               </packing>
             </child>
+            <child>
+              <object class="GtkSpinner" id="spinner1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">15</property>
+                <property name="margin_right">15</property>
+                <property name="margin_top">5</property>
+                <property name="margin_bottom">5</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -89,7 +126,7 @@
                 <property name="margin_top">5</property>
                 <property name="margin_bottom">5</property>
                 <property name="hexpand">True</property>
-                <property name="label" translatable="yes">Length of Tickle: </property>
+                <property name="label" translatable="yes">Length of Tickle [mins] : </property>
                 <property name="xalign">0</property>
                 <attributes>
                   <attribute name="weight" value="ultrabold"/>
@@ -109,7 +146,7 @@
                 <property name="margin_top">5</property>
                 <property name="margin_bottom">5</property>
                 <property name="hexpand">True</property>
-                <property name="label" translatable="yes">Size of Tickle: </property>
+                <property name="label" translatable="yes">Size of Tickle [pixels]: </property>
                 <property name="ellipsize">end</property>
                 <property name="xalign">0</property>
                 <attributes>
@@ -159,7 +196,9 @@
               <object class="GtkSpinButton" id="sbn_length_of_tickle">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <signal name="change-value" handler="on_sbn_length_of_tickle_change_value" swapped="no"/>
+                <property name="adjustment">adj_spn_length_of_tickle</property>
+                <property name="climb_rate">1</property>
+                <signal name="value-changed" handler="on_sbn_length_of_tickle_value_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -170,7 +209,9 @@
               <object class="GtkSpinButton" id="sbn_size_of_tickle">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <signal name="change-value" handler="on_sbn_size_of_tickle_change_value" swapped="no"/>
+                <property name="adjustment">adj_spn_size_of_tickle</property>
+                <property name="climb_rate">1</property>
+                <signal name="value-changed" handler="on_sbn_size_of_tickle_value_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -186,7 +227,7 @@
                 <property name="margin_top">5</property>
                 <property name="margin_bottom">5</property>
                 <property name="hexpand">True</property>
-                <property name="label" translatable="yes">Frequency of Tickle: </property>
+                <property name="label" translatable="yes">Frequency of Tickle [secs] : </property>
                 <property name="ellipsize">end</property>
                 <property name="xalign">0</property>
                 <attributes>
@@ -195,17 +236,6 @@
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkSpinButton" id="sbn_frequency_of_tickle">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <signal name="change-value" handler="on_sbn_frequency_of_tickle_change_value" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
                 <property name="top_attach">2</property>
               </packing>
             </child>
@@ -223,6 +253,19 @@
               </object>
               <packing>
                 <property name="left_attach">2</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="sbn_frequency_of_tickle">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="adjustment">adj_spn_frequency_of_tickle</property>
+                <property name="climb_rate">1</property>
+                <signal name="value-changed" handler="on_sbn_frequency_of_tickle_value_changed" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
                 <property name="top_attach">2</property>
               </packing>
             </child>
@@ -262,14 +305,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLevelBar" id="lvl_progress">
+          <object class="GtkProgressBar" id="prg_remaining">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_left">5</property>
             <property name="margin_right">5</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">5</property>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">3</property>
           </packing>
